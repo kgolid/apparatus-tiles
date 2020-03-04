@@ -4,10 +4,15 @@ export function pie(p, x, y, ux, uy, cols, r0, r1) {
   solid(p, x, y, ux, uy, cols);
   const cx = (ux[0] + uy[0]) / 2;
   const cy = (ux[1] + uy[1]) / 2;
+
   p.fill(cols[1]);
-  p.arc(x + cx, y + cy, cx * 1.5, cy * 1.5, r0, r1, p.PIE);
-  p.fill(cols[2]);
-  p.arc(x + cx, y + cy, cx * 1.5, cy * 1.5, r1, r0, p.PIE);
+  if (r0 === r1) {
+    p.ellipse(x + cx, y + cy, cx * 1.5, cy * 1.5);
+  } else {
+    p.arc(x + cx, y + cy, cx * 1.5, cy * 1.5, r0, r1, p.PIE);
+    p.fill(cols[2]);
+    p.arc(x + cx, y + cy, cx * 1.5, cy * 1.5, r1, r0, p.PIE);
+  }
 }
 
 export function bar(p, x, y, ux, uy, cols, rx0, rx1) {

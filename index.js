@@ -1,6 +1,5 @@
 import ApparatusGenerator from 'apparatus-generator';
-//import * as tome from 'chromotome';
-import * as tome from 'bekk-chromotome';
+import * as tome from 'chromotome';
 import { convert_to_app_dim, get_random } from './utils';
 import patterns from './patterns';
 
@@ -8,12 +7,12 @@ const grid_dim_x = 40;
 const grid_dim_y = 40;
 const cell_scale = 20;
 
-const tile_scales = [1, 2, 3, 4];
+const tile_scales = [1, 2, 3, 4, 5];
 
 const frame_mode = false;
 
 const apparatus_generator = initialize_apparatus();
-const palette = tome.get('bekk01m');
+const palette = tome.get('empusa');
 
 function initialize_apparatus() {
   const app_x = convert_to_app_dim(grid_dim_x);
